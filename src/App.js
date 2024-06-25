@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <AccountantDashboard></AccountantDashboard>
     
-      <OwnerDashboard></OwnerDashboard>
+      {/* <OwnerDashboard></OwnerDashboard> */}
 
         {/* <Registration></Registration>
         <Login></Login> */}

@@ -46,12 +46,12 @@ function showFlatNoHandler(){
         alert('PaymentDetails Updation failed. Please try again.');
     }
 
-    // console.log(
-    //     {flatNumber : flateNumberRef.current.innerText, 
-    //     flatOwner :flateOwnerrRef.current.innerText,
-    //     paymentDate :paymentDateRef.current.value,
-    //     paidAmount :paidAmountRef.current.value,
-    // })
+    console.log(
+        {flatNumber : flateNumberRef.current.value, 
+        flatOwner :flateOwnerrRef.current.value,
+        paymentDate :paymentDateRef.current.value,
+        paidAmount :paidAmountRef.current.value,
+    })
     
 }
 
@@ -66,23 +66,44 @@ function showFlatNoHandler(){
                         <th scope="col">Dues</th>
                         <th scope="col">Payment Date</th>
                         <th scope="col">Paid Amount</th>
+                        <th scope="col">Save</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row" ref={flateNumberRef}>1</th>
+                        <th><input type="text" ref={flateNumberRef} id="start" name="trip-start"  min="2024-07-01" max="2025-12-31" value={1}  disabled  onChange={(e)=>{console.log('FlatNo:',e.target.value )}}/> </th>
+                        {/* <th scope="row" ref={flateNumberRef}>1</th> */}
                         <td ref={flateOwnerrRef}>XYZ</td>
                         <td>1000</td>
                         <td><input type="date" ref={paymentDateRef} id="start" name="trip-start"  min="2024-07-01" max="2025-12-31" onChange={(e)=>{console.log('Date:',e.target.value )}} /></td>
                         <td><input type="text" ref={paidAmountRef} placeholder="Enter Paid Amount"   onChange={(e)=>{console.log(e.target.value)}}/></td>
+                        <td><button className="btn btn-primary" type="submit" onClick={showFlatNoHandler}>Save</button></td>
+                    </tr>
+                    <tr>
+                    <th><input type="text" ref={flateNumberRef} id="start" name="trip-start"  min="2024-07-01" max="2025-12-31"  value={2} disabled onChange={(e)=>{console.log('Date:',e.target.value )}}/> </th>
+                        {/* <th scope="row" ref={flateNumberRef}>2</th> */}
+                        <td ref={flateOwnerrRef}>ABC</td>
+                        <td>1000</td>
+                        <td><input type="date" ref={paymentDateRef} id="start" name="trip-start"  min="2024-07-01" max="2025-12-31" onChange={(e)=>{console.log('Date:',e.target.value )}} /></td>
+                        <td><input type="text" ref={paidAmountRef} placeholder="Enter Paid Amount"   onChange={(e)=>{console.log(e.target.value)}}/></td>
+                        <td><button className="btn btn-primary" type="submit" onClick={showFlatNoHandler}>Save</button></td>
+                    </tr>
+                    <tr>
+                    <th><input type="text" ref={flateNumberRef} id="start" name="trip-start"  min="2024-07-01" max="2025-12-31"  value={3}disabled onChange={(e)=>{console.log('Date:',e.target.value )}}/> </th>
+                        {/* <th scope="row" ref={flateNumberRef}>3</th> */}
+                        <td ref={flateOwnerrRef}>PQR</td>
+                        <td>1000</td>
+                        <td><input type="date" ref={paymentDateRef} id="start" name="trip-start"  min="2024-07-01" max="2025-12-31" onChange={(e)=>{console.log('Date:',e.target.value )}} /></td>
+                        <td><input type="text" ref={paidAmountRef} placeholder="Enter Paid Amount"   onChange={(e)=>{console.log(e.target.value)}}/></td>
+                        <td><button className="btn btn-primary" type="submit" onClick={showFlatNoHandler}>Save</button></td>
                     </tr>
                 </tbody>
 
             </table>
 
-            <div className="float-right mx-4">
+            {/* <div className="float-right mx-4">
                 <button className="btn btn-primary" type="submit" onClick={showFlatNoHandler}>Submit form</button>
-            </div>
+            </div> */}
         </>
     )
 }
