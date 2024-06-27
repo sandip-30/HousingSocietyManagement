@@ -9,6 +9,7 @@ const AddMonthTrial = (props) => {
    const users = props.userRegData
    console.log(users.length)
 
+
     
   // Initialize state with 100 rows
   const [rows, setRows] = useState(
