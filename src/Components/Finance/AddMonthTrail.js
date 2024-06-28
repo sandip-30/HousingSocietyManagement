@@ -19,7 +19,7 @@ const AddMonthTrial = (props) => {
       ownerName: '',
       isRented: false,
       month: '',
-      dueDate:'a'
+      dueDate:'b'
     }))
   );
 
