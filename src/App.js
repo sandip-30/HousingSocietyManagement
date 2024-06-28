@@ -12,6 +12,7 @@ import axios, { Axios } from 'axios';
 function App() {
 
   const [userRegData, setUserRegData] = useState('')
+  const [loading, setloading] = useState(false)
 
   useEffect(() => {
     fetchUsers()
@@ -20,6 +21,8 @@ function App() {
   // fetch registration Data
 
   function fetchUsers() {
+
+    setloading(true)
     axios.get('https://society-management-syste-4b7b1-default-rtdb.asia-southeast1.firebasedatabase.app/flatsRegistration.json')
       .then((response) => {
         return response.data
@@ -31,6 +34,7 @@ function App() {
         }
         console.log(usersData)
         setUserRegData(usersData)
+        setloading(false)
       })
   }
 
@@ -40,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <AddMonthTrial userRegData = {userRegData}></AddMonthTrial>
+     { !loading && <AddMonthTrial userRegData = {userRegData}></AddMonthTrial>}
       {/* <AddMonthDetails></AddMonthDetails> */}
       {/* <AccountantDashboard></AccountantDashboard> */}
 
