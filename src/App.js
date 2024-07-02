@@ -8,6 +8,7 @@ import AddMonthDetails from './Components/Finance/AddMonthDetails';
 import AddMonthTrial from './Components/Finance/AddMonthTrail';
 import React, { useState, useEffect } from "react";
 import axios, { Axios } from 'axios';
+import MonthDueDateForm from './Components/Finance/MonthDueDateForm';
 
 function App() {
 
@@ -44,7 +45,8 @@ function App() {
 
   return (
     <div className="App">
-     { !loading && <AddMonthTrial userRegData = {userRegData}></AddMonthTrial>}
+      <MonthDueDateForm></MonthDueDateForm>
+     {/* { !loading && <AddMonthTrial userRegData = {userRegData}></AddMonthTrial>} */}
       {/* <AddMonthDetails></AddMonthDetails> */}
       {/* <AccountantDashboard></AccountantDashboard> */}
 

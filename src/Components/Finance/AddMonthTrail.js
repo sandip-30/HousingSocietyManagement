@@ -7,12 +7,16 @@ const AddMonthTrial = (props) => {
 
     // Get Registration Details
    const users = props.userRegData
+   
+  const myUserArray = [...users];
+ 
    console.log(users.length)
+   console.log(myUserArray)
 
 
 
   // Initialize state with 100 row
-  const [myrows , setmyrows]= useState(users)
+  const [row , setmyrows]= useState(users)
   const [rows, setRows] = useState(
 
     Array.from({ length: users.length }, () => ({
@@ -37,6 +41,7 @@ const AddMonthTrial = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Submitted Data:', rows);
+    
     // Process the data as needed
   };
 
@@ -55,7 +60,7 @@ const AddMonthTrial = (props) => {
             </tr>
           </thead>
           <tbody>
-            {myrows.map((row, index) => (
+            {myUserArray.map((row, index) => (
               <tr key={index}>
                 <td>
                   {/* <input
@@ -67,12 +72,13 @@ const AddMonthTrial = (props) => {
                   <h4 onChange={(e) => handleChange(index, 'flatNo', console.log(e))} >{row.flatNumber}</h4>
                 </td>
                 <td>
-                  <input
+                  {/* <input
                     type="text"
                     value={row.ownerName}
                     onChange={(e) => handleChange(index, 'ownerName', e.target.value)}
                     className="form-control"
-                  />
+                  /> */}
+                   <h4 onChange={(e) => handleChange(index, 'flatNo', console.log(e))} >{row.ownerName}</h4>
                 </td>
                 <td>
                   <select
@@ -86,8 +92,7 @@ const AddMonthTrial = (props) => {
                 </td>
                 <td>
                   <input
-                    type="month"
-
+                    type="month" value={'July'}
                     onChange={(e) => handleChange(index, 'month', e.target.value)}
                     className="form-control"
                   />
@@ -95,7 +100,6 @@ const AddMonthTrial = (props) => {
                 <td>
                   <input
                     type="date"
-
                     onChange={(e) => handleChange(index, 'month', e.target.value)}
                     className="form-control"
                   />
